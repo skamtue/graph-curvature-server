@@ -261,5 +261,7 @@ class index:
 
 
 if __name__ == "__main__":
+    import os
     app = web.application(urls, globals())
-    app.run()
+    port = int(os.environ.get("PORT", 8090))
+    app.run(port=port)
